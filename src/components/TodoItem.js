@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/modules/todoItem.module.scss";
 import { getClasses } from "../utils/getClasses";
-import { format } from "date-fns/esm";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { deleteTodo, updateTodo } from "./redux/todoSlice";
@@ -59,10 +58,7 @@ function TodoItem({ todo }) {
             >
               <b style={{ fontSize: "3rem" }}>{todo.title}</b>
             </p>
-            <p className={styles.time}>
-              <b style={{ color: "green" }}>Created: </b>{" "}
-              {format(new Date(todo.time), "p- MM/dd/yyyy")}
-            </p>
+
             <p className={styles.time}>
               <b style={{ color: "red" }}>Deadline: </b>
               {todo.deadline}

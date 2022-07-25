@@ -18,8 +18,8 @@ const container = {
 function AppContent() {
   const todoList = useSelector((state) => state.todo.todoList);
 
-  const sortedTodoList = [...todoList];
-  sortedTodoList.sort((a, b) => new Date(b.time) - new Date(a.time));
+  //const sortedTodoList = [...todoList];
+  //sortedTodoList.sort((a, b) => new Date(b) - new Date(a));
 
   return (
     <motion.div
@@ -29,7 +29,7 @@ function AppContent() {
       animate="visible"
     >
       <AnimatePresence>
-        {sortedTodoList?.map((todo, id) => (
+        {todoList?.map((todo, id) => (
           <TodoItem todo={todo} key={id} />
         ))}
       </AnimatePresence>

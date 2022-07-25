@@ -64,6 +64,7 @@ export const todoSlice = createSlice({
             todo.status = action.payload.status;
             todo.deadline = action.payload.deadline;
             todo.title = action.payload.title;
+            todo.time = new Date();
           }
         });
 
